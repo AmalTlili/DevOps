@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
     mysqldb:
-      container_name: mysqldb
-      image: mysql:8
+     container_name: 'mysqldb'
+       image: mysql:8
       restart: unless-stopped
       environnement:
       MYSQL_ROOT_PASSWORD: admin
