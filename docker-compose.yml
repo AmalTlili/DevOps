@@ -1,19 +1,19 @@
 version: '3.9'
 services:
- mysqldb:
-  container_name: mysqldb
-  image: mysql:8
-  restart: unless-stopped
-  volumes:
-    - /home/mysqldata:/var/lib/mysql
-  environnement:
-    MYSQL_ROOT_PASSWORD: root
+  mysqldb:
+          container_name: mysqldb
+          image: mysql:8
+          restart: unless-stopped
+          volumes:
+                - /home/mysqldata:/var/lib/mysql
+          environnement:
+                MYSQL_ROOT_PASSWORD: root
 
- spring_app:
-  container_name: tpachat
-  image: tpachat
-  restart: on_failure
-  port:
-    - 9090:9090
-  depends_on:
-    - mysqldb
+  spring_app:
+          container_name: tpachat
+          image: tpachat
+          restart: on_failure
+          port:
+                - 9090:9090
+          depends_on:
+                  - mysqldb
