@@ -15,8 +15,7 @@ services:
   spring_app:
           image: tpachat
           container_name: tpachat
-          restart_policy:
-                condition: on-failure
+          restart_policy: on-failure
           ports:
                 - 9090:9090
           depends_on:
