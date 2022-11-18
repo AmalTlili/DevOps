@@ -18,7 +18,7 @@ pipeline {
             stage("Docker Image") {
                 steps{
                     script{
-                        sh "docker build -t samibhh/builtspring:latest ."
+                        sh "docker build -t tpachat:latest ."
                     }
                 }
             }
