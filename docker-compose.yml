@@ -14,7 +14,7 @@ services:
 
 
   spring_app:
-          image: springtpachat
+          image: amaalt/springtpachat
           container_name: springtpachat
           restart: on-failure
           ports:
