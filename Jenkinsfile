@@ -34,17 +34,17 @@ pipeline {
 
             stage('Run Project'){
                 steps{
-                   sh 'docker compose up -D'
-                    // sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
+                //    sh 'docker compose up -D'
+                     sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
                     
                 }
             }
 
-            // stage('MVN SONARQUBE') {
-            //     steps{
-            //             sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
-            //         }
-            // }
+            stage('MVN SONARQUBE') {
+                steps{
+                        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+                    }
+            }
 
     
         }
