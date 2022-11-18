@@ -28,9 +28,10 @@ pipeline {
                     sh 'echo dckr_pat_IJl6m1o3x6Nqn8Rwx6mHObbGocM | docker login -u amaalt --password-stdin'
                 }
                 }     
-            stage('Run Project'){
+              stage('Run Project'){
                 steps{
-                    sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
+                   sh 'docker compose up -D'
+                    // sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
                     
                 }
 
@@ -39,7 +40,7 @@ pipeline {
                         sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
                     }
              }
-             
+
      post {
             always {
               cleanWs()
