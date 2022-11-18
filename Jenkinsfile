@@ -35,7 +35,7 @@ pipeline {
             stage('Run Project'){
                 steps{
                 //    sh 'docker compose up -D'
-                     sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
+                     sh 'docker run -p 8089:8089 --network mynetwork -d springtpachat'
                     
                 }
             }
