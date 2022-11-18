@@ -33,6 +33,13 @@ pipeline {
                     sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
                     
                 }
+
+             stage('MVN SONARQUBE') {
+                steps{
+                        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+                    }
+             }
+             
      post {
             always {
               cleanWs()
