@@ -33,6 +33,10 @@ pipeline {
                     sh 'docker run -p 8089:8089 --network mynetwork -d tpachat:latest'
                     
                 }
+     post {
+            always {
+              cleanWs()
+        }
             }
         }
 }
