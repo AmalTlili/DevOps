@@ -14,8 +14,8 @@ services:
 
 
   spring_app:
-          image: tpachat
-          container_name: tpachat
+          image: springtpachat
+          container_name: springtpachat
           restart: on-failure
           ports:
                 - 8089:8089

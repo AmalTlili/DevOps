@@ -19,7 +19,7 @@ pipeline {
             stage('Docker Image') {
                 steps{
                     script{
-                        sh "docker build -t tpachat ."
+                        sh "docker build -t amaalt/springtpachat ."
                     }
                 }
               }
