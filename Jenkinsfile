@@ -14,7 +14,8 @@ pipeline {
             stage('Build') {
                 steps {
                     sh "mvn -version"
-                    sh "mvn clean package -DskipTests"
+                    sh "mvn clean package -DskipTests=true"
+                    archive 'target/*.jar'
                 }
             }
 
@@ -39,6 +40,19 @@ pipeline {
                     
                 }
             }
+
+            stage('Junit') { 
+			    steps {
+				    sh 'mvn test'
+			    } 
+            }
+
+            stage('Build Artifact - Maven') {
+			    steps {
+				    sh "mvn clean package -DskipTests=true"
+				    archive 'target/*.jar'
+			    }
+	     	}
 
             stage('MVN SONARQUBE') {
                 steps{
