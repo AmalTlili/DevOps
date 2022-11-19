@@ -11,12 +11,12 @@ pipeline {
                 }
             }
 
-            // stage('Build') {
-            //     steps {
-            //         sh "mvn -version"
-            //         sh "mvn clean package -DskipTests"
-            //     }
-            // }
+            stage('Build') {
+                steps {
+                    sh "mvn -version"
+                    sh "mvn clean package -DskipTests"
+                }
+            }
 
             stage('Docker Image') {
                 steps{
